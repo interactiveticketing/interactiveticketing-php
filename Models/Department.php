@@ -1,6 +1,6 @@
 <?php
 /**
- * ScanPointConfig
+ * Department
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \InteractiveTicketing\ObjectSerializer;
 
 /**
- * ScanPointConfig Class Doc Comment
+ * Department Class Doc Comment
  *
  * @category Class
  * @package  InteractiveTicketing
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ScanPointConfig implements ModelInterface, ArrayAccess
+class Department implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class ScanPointConfig implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ScanPointConfig';
+    protected static $swaggerModelName = 'Department';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,9 +56,9 @@ class ScanPointConfig implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'scanPointConfigId' => 'int',
+        'departmentId' => 'int',
 'name' => 'string',
-'summary' => 'string[]'    ];
+'color' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -66,9 +66,9 @@ class ScanPointConfig implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'scanPointConfigId' => null,
+        'departmentId' => null,
 'name' => null,
-'summary' => null    ];
+'color' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -97,9 +97,9 @@ class ScanPointConfig implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'scanPointConfigId' => 'scanPointConfigId',
+        'departmentId' => 'departmentId',
 'name' => 'name',
-'summary' => '_summary'    ];
+'color' => 'color'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -107,9 +107,9 @@ class ScanPointConfig implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'scanPointConfigId' => 'setScanPointConfigId',
+        'departmentId' => 'setDepartmentId',
 'name' => 'setName',
-'summary' => 'setSummary'    ];
+'color' => 'setColor'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -117,9 +117,9 @@ class ScanPointConfig implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'scanPointConfigId' => 'getScanPointConfigId',
+        'departmentId' => 'getDepartmentId',
 'name' => 'getName',
-'summary' => 'getSummary'    ];
+'color' => 'getColor'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -179,9 +179,9 @@ class ScanPointConfig implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['scanPointConfigId'] = isset($data['scanPointConfigId']) ? $data['scanPointConfigId'] : null;
+        $this->container['departmentId'] = isset($data['departmentId']) ? $data['departmentId'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['summary'] = isset($data['summary']) ? $data['summary'] : null;
+        $this->container['color'] = isset($data['color']) ? $data['color'] : null;
     }
 
     /**
@@ -209,25 +209,25 @@ class ScanPointConfig implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets scanPointConfigId
+     * Gets departmentId
      *
      * @return int
      */
-    public function getScanPointConfigId()
+    public function getDepartmentId()
     {
-        return $this->container['scanPointConfigId'];
+        return $this->container['departmentId'];
     }
 
     /**
-     * Sets scanPointConfigId
+     * Sets departmentId
      *
-     * @param int $scanPointConfigId The Scan Point Config ID
+     * @param int $departmentId The department ID
      *
      * @return $this
      */
-    public function setScanPointConfigId($scanPointConfigId)
+    public function setDepartmentId($departmentId)
     {
-        $this->container['scanPointConfigId'] = $scanPointConfigId;
+        $this->container['departmentId'] = $departmentId;
 
         return $this;
     }
@@ -245,7 +245,7 @@ class ScanPointConfig implements ModelInterface, ArrayAccess
     /**
      * Sets name
      *
-     * @param string $name The Scan Point Config name
+     * @param string $name Name of the department
      *
      * @return $this
      */
@@ -257,25 +257,25 @@ class ScanPointConfig implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets summary
+     * Gets color
      *
-     * @return string[]
+     * @return string
      */
-    public function getSummary()
+    public function getColor()
     {
-        return $this->container['summary'];
+        return $this->container['color'];
     }
 
     /**
-     * Sets summary
+     * Sets color
      *
-     * @param string[] $summary The Scan Point Config resrictions described
+     * @param string $color Hex color assigned to department for display
      *
      * @return $this
      */
-    public function setSummary($summary)
+    public function setColor($color)
     {
-        $this->container['summary'] = $summary;
+        $this->container['color'] = $color;
 
         return $this;
     }

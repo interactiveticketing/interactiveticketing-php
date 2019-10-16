@@ -1,6 +1,6 @@
 <?php
 /**
- * ScanPointConfig
+ * ThirdPartyTicket
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \InteractiveTicketing\ObjectSerializer;
 
 /**
- * ScanPointConfig Class Doc Comment
+ * ThirdPartyTicket Class Doc Comment
  *
  * @category Class
  * @package  InteractiveTicketing
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ScanPointConfig implements ModelInterface, ArrayAccess
+class ThirdPartyTicket implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class ScanPointConfig implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ScanPointConfig';
+    protected static $swaggerModelName = 'ThirdPartyTicket';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,9 +56,8 @@ class ScanPointConfig implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'scanPointConfigId' => 'int',
-'name' => 'string',
-'summary' => 'string[]'    ];
+        'name' => 'string',
+'price' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -66,9 +65,8 @@ class ScanPointConfig implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'scanPointConfigId' => null,
-'name' => null,
-'summary' => null    ];
+        'name' => null,
+'price' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -97,9 +95,8 @@ class ScanPointConfig implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'scanPointConfigId' => 'scanPointConfigId',
-'name' => 'name',
-'summary' => '_summary'    ];
+        'name' => 'name',
+'price' => 'price'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -107,9 +104,8 @@ class ScanPointConfig implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'scanPointConfigId' => 'setScanPointConfigId',
-'name' => 'setName',
-'summary' => 'setSummary'    ];
+        'name' => 'setName',
+'price' => 'setPrice'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -117,9 +113,8 @@ class ScanPointConfig implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'scanPointConfigId' => 'getScanPointConfigId',
-'name' => 'getName',
-'summary' => 'getSummary'    ];
+        'name' => 'getName',
+'price' => 'getPrice'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -179,9 +174,8 @@ class ScanPointConfig implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['scanPointConfigId'] = isset($data['scanPointConfigId']) ? $data['scanPointConfigId'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['summary'] = isset($data['summary']) ? $data['summary'] : null;
+        $this->container['price'] = isset($data['price']) ? $data['price'] : null;
     }
 
     /**
@@ -209,30 +203,6 @@ class ScanPointConfig implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets scanPointConfigId
-     *
-     * @return int
-     */
-    public function getScanPointConfigId()
-    {
-        return $this->container['scanPointConfigId'];
-    }
-
-    /**
-     * Sets scanPointConfigId
-     *
-     * @param int $scanPointConfigId The Scan Point Config ID
-     *
-     * @return $this
-     */
-    public function setScanPointConfigId($scanPointConfigId)
-    {
-        $this->container['scanPointConfigId'] = $scanPointConfigId;
-
-        return $this;
-    }
-
-    /**
      * Gets name
      *
      * @return string
@@ -245,7 +215,7 @@ class ScanPointConfig implements ModelInterface, ArrayAccess
     /**
      * Sets name
      *
-     * @param string $name The Scan Point Config name
+     * @param string $name Name of ticket
      *
      * @return $this
      */
@@ -257,25 +227,25 @@ class ScanPointConfig implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets summary
+     * Gets price
      *
-     * @return string[]
+     * @return string
      */
-    public function getSummary()
+    public function getPrice()
     {
-        return $this->container['summary'];
+        return $this->container['price'];
     }
 
     /**
-     * Sets summary
+     * Sets price
      *
-     * @param string[] $summary The Scan Point Config resrictions described
+     * @param string $price Purchase price for the ticket
      *
      * @return $this
      */
-    public function setSummary($summary)
+    public function setPrice($price)
     {
-        $this->container['summary'] = $summary;
+        $this->container['price'] = $price;
 
         return $this;
     }

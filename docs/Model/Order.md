@@ -33,5 +33,5 @@ Name | Type | Description | Notes
 **tickets** | [**\InteractiveTicketing\Models\Ticket[]**](Ticket.md) | Array of tickets ordered | [optional] 
 **posCashierName** | **string** | Applicable to pos orders | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

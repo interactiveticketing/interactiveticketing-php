@@ -11,5 +11,5 @@ Name | Type | Description | Notes
 **scanPoint** | [**\InteractiveTicketing\Models\ScanPoint**](ScanPoint.md) |  | [optional] 
 **device** | [**\InteractiveTicketing\Models\Device**](Device.md) |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

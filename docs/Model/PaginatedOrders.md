@@ -10,5 +10,5 @@ Name | Type | Description | Notes
 **length** | **int** | The number of items on current page | [optional] 
 **total** | **int** | The total number of items on all pages | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

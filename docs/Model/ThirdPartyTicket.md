@@ -1,10 +1,10 @@
-# Client
+# ThirdPartyTicket
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**clientId** | **int** | The organization ID | [optional] 
-**title** | **string** | The organization name | [optional] 
+**name** | **string** | Name of ticket | [optional] 
+**price** | **string** | Purchase price for the ticket | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

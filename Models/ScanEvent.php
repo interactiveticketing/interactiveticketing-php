@@ -1,6 +1,6 @@
 <?php
 /**
- * ScanPointConfig
+ * ScanEvent
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \InteractiveTicketing\ObjectSerializer;
 
 /**
- * ScanPointConfig Class Doc Comment
+ * ScanEvent Class Doc Comment
  *
  * @category Class
  * @package  InteractiveTicketing
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ScanPointConfig implements ModelInterface, ArrayAccess
+class ScanEvent implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class ScanPointConfig implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ScanPointConfig';
+    protected static $swaggerModelName = 'ScanEvent';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,9 +56,9 @@ class ScanPointConfig implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'scanPointConfigId' => 'int',
-'name' => 'string',
-'summary' => 'string[]'    ];
+        'eventId' => 'int',
+'scanPointId' => 'int',
+'testMode' => 'bool'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -66,9 +66,9 @@ class ScanPointConfig implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'scanPointConfigId' => null,
-'name' => null,
-'summary' => null    ];
+        'eventId' => null,
+'scanPointId' => null,
+'testMode' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -97,9 +97,9 @@ class ScanPointConfig implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'scanPointConfigId' => 'scanPointConfigId',
-'name' => 'name',
-'summary' => '_summary'    ];
+        'eventId' => 'eventId',
+'scanPointId' => 'scanPointId',
+'testMode' => 'testMode'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -107,9 +107,9 @@ class ScanPointConfig implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'scanPointConfigId' => 'setScanPointConfigId',
-'name' => 'setName',
-'summary' => 'setSummary'    ];
+        'eventId' => 'setEventId',
+'scanPointId' => 'setScanPointId',
+'testMode' => 'setTestMode'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -117,9 +117,9 @@ class ScanPointConfig implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'scanPointConfigId' => 'getScanPointConfigId',
-'name' => 'getName',
-'summary' => 'getSummary'    ];
+        'eventId' => 'getEventId',
+'scanPointId' => 'getScanPointId',
+'testMode' => 'getTestMode'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -179,9 +179,9 @@ class ScanPointConfig implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['scanPointConfigId'] = isset($data['scanPointConfigId']) ? $data['scanPointConfigId'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['summary'] = isset($data['summary']) ? $data['summary'] : null;
+        $this->container['eventId'] = isset($data['eventId']) ? $data['eventId'] : null;
+        $this->container['scanPointId'] = isset($data['scanPointId']) ? $data['scanPointId'] : null;
+        $this->container['testMode'] = isset($data['testMode']) ? $data['testMode'] : null;
     }
 
     /**
@@ -209,73 +209,73 @@ class ScanPointConfig implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets scanPointConfigId
+     * Gets eventId
      *
      * @return int
      */
-    public function getScanPointConfigId()
+    public function getEventId()
     {
-        return $this->container['scanPointConfigId'];
+        return $this->container['eventId'];
     }
 
     /**
-     * Sets scanPointConfigId
+     * Sets eventId
      *
-     * @param int $scanPointConfigId The Scan Point Config ID
+     * @param int $eventId The event ID
      *
      * @return $this
      */
-    public function setScanPointConfigId($scanPointConfigId)
+    public function setEventId($eventId)
     {
-        $this->container['scanPointConfigId'] = $scanPointConfigId;
+        $this->container['eventId'] = $eventId;
 
         return $this;
     }
 
     /**
-     * Gets name
+     * Gets scanPointId
      *
-     * @return string
+     * @return int
      */
-    public function getName()
+    public function getScanPointId()
     {
-        return $this->container['name'];
+        return $this->container['scanPointId'];
     }
 
     /**
-     * Sets name
+     * Sets scanPointId
      *
-     * @param string $name The Scan Point Config name
+     * @param int $scanPointId The Scan Point ID
      *
      * @return $this
      */
-    public function setName($name)
+    public function setScanPointId($scanPointId)
     {
-        $this->container['name'] = $name;
+        $this->container['scanPointId'] = $scanPointId;
 
         return $this;
     }
 
     /**
-     * Gets summary
+     * Gets testMode
      *
-     * @return string[]
+     * @return bool
      */
-    public function getSummary()
+    public function getTestMode()
     {
-        return $this->container['summary'];
+        return $this->container['testMode'];
     }
 
     /**
-     * Sets summary
+     * Sets testMode
      *
-     * @param string[] $summary The Scan Point Config resrictions described
+     * @param bool $testMode True indicates testMode, validate testMode tickets
      *
      * @return $this
      */
-    public function setSummary($summary)
+    public function setTestMode($testMode)
     {
-        $this->container['summary'] = $summary;
+        $this->container['testMode'] = $testMode;
 
         return $this;
     }

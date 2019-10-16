@@ -1,20 +1,21 @@
 # InteractiveTicketing\DefaultApi
 
-All URIs are relative to *https://secure.interactiveticketing.com/developers/api/v1*
+All URIs are relative to *https://secure.interactiveticketing.com/developers/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**eventsEventIdGet**](DefaultApi.md#eventsEventIdGet) | **GET** /events/{eventId} | Single Event
-[**eventsEventIdOrdersGet**](DefaultApi.md#eventsEventIdOrdersGet) | **GET** /events/{eventId}/orders | Search Orders
-[**eventsEventIdOrdersOrderIdGet**](DefaultApi.md#eventsEventIdOrdersOrderIdGet) | **GET** /events/{eventId}/orders/{orderId} | Single Order
-[**eventsGet**](DefaultApi.md#eventsGet) | **GET** /events | All Events
+[**eventsEventIdGet**](DefaultApi.md#eventseventidget) | **GET** /events/{eventId} | Fetch Event by ID
+[**eventsEventIdOrdersGet**](DefaultApi.md#eventseventidordersget) | **GET** /events/{eventId}/orders | Query Orders
+[**eventsEventIdOrdersOrderIdGet**](DefaultApi.md#eventseventidordersorderidget) | **GET** /events/{eventId}/orders/{orderId} | Fetch Order by ID
+[**eventsGet**](DefaultApi.md#eventsget) | **GET** /events | List All Events
+[**scanPost**](DefaultApi.md#scanpost) | **POST** /scan | Scan Ticket
 
 # **eventsEventIdGet**
 > \InteractiveTicketing\Models\Event eventsEventIdGet($eventId)
 
-Single Event
+Fetch Event by ID
 
-Get single event with `eventId`
+Get single event with `eventId`.
 
 ### Example
 ```php
@@ -61,7 +62,9 @@ No authorization required
 # **eventsEventIdOrdersGet**
 > \InteractiveTicketing\Models\PaginatedOrders eventsEventIdOrdersGet($eventId, $fromOrderId, $start, $limit, $testMode, $orderType)
 
-Search Orders
+Query Orders
+
+Returns paginated list of orders from the event. The `orderId` is not unique across all events. Use `fromOrderId` parameter to loop through orders if you are pulling down all data.
 
 ### Example
 ```php
@@ -118,7 +121,9 @@ No authorization required
 # **eventsEventIdOrdersOrderIdGet**
 > \InteractiveTicketing\Models\Order eventsEventIdOrdersOrderIdGet($eventId, $orderId)
 
-Single Order
+Fetch Order by ID
+
+Get single order with `eventId` and `orderId`.
 
 ### Example
 ```php
@@ -167,9 +172,9 @@ No authorization required
 # **eventsGet**
 > \InteractiveTicketing\Models\Event[] eventsGet()
 
-All Events
+List All Events
 
-Get list of all events with their `eventId` for your user key
+Get list of all your events with their `eventId`.
 
 ### Example
 ```php
@@ -205,6 +210,55 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **scanPost**
+> \InteractiveTicketing\Models\ScanResponse scanPost($body)
+
+Scan Ticket
+
+Scan a ticket or third party barcode.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new InteractiveTicketing\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$body = new \InteractiveTicketing\Models\ScanRequest(); // \InteractiveTicketing\Models\ScanRequest | List of user object
+
+try {
+    $result = $apiInstance->scanPost($body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->scanPost: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\InteractiveTicketing\Models\ScanRequest**](../Model/ScanRequest.md)| List of user object |
+
+### Return type
+
+[**\InteractiveTicketing\Models\ScanResponse**](../Model/ScanResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)

@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ticketId** | **int** | The ticket ID | [optional] 
+**orderId** | **int** | The ticket order ID | [optional] 
 **barcode** | **string** | The ticket barcode | [optional] 
 **canceled** | **bool** | Canceled / Voided ticket | [optional] 
 **name** | **string** | Name of ticket | [optional] 
@@ -32,8 +33,9 @@ Name | Type | Description | Notes
 **promoCode** | **string** | Applicable to promo code discounts | [optional] 
 **promoName** | **string** | Applicable to promo code discounts | [optional] 
 **promoDescription** | **string** | Applicable to promo code discounts | [optional] 
+**department** | [**\InteractiveTicketing\Models\Department**](Department.md) |  | [optional] 
 **scans** | [**\InteractiveTicketing\Models\Scan[]**](Scan.md) | Array of ticket scan activity | [optional] 
 **scanPointConfig** | [**\InteractiveTicketing\Models\ScanPointConfig**](ScanPointConfig.md) |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
