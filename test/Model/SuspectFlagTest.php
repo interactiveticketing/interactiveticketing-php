@@ -1,6 +1,6 @@
 <?php
 /**
- * ScanPointConfigTest
+ * SuspectFlagTest
  *
  * PHP version 5
  *
@@ -29,15 +29,15 @@
 namespace InteractiveTicketing;
 
 /**
- * ScanPointConfigTest Class Doc Comment
+ * SuspectFlagTest Class Doc Comment
  *
  * @category    Class
- * @description ScanPointConfig
+ * @description SuspectFlag
  * @package     InteractiveTicketing
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ScanPointConfigTest extends \PHPUnit_Framework_TestCase
+class SuspectFlagTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -69,30 +69,51 @@ class ScanPointConfigTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "ScanPointConfig"
+     * Test "SuspectFlag"
      */
-    public function testScanPointConfig()
+    public function testSuspectFlag()
     {
     }
 
     /**
-     * Test attribute "scanPointConfigId"
+     * Test attribute "suspectFlagId"
      */
-    public function testPropertyScanPointConfigId()
+    public function testPropertySuspectFlagId()
     {
     }
 
     /**
-     * Test attribute "name"
+     * Test attribute "orderId"
      */
-    public function testPropertyName()
+    public function testPropertyOrderId()
     {
     }
 
     /**
-     * Test attribute "summary"
+     * Test attribute "suspectFilterId"
      */
-    public function testPropertySummary()
+    public function testPropertySuspectFilterId()
+    {
+    }
+
+    /**
+     * Test attribute "resolved"
+     */
+    public function testPropertyResolved()
+    {
+    }
+
+    /**
+     * Test attribute "notes"
+     */
+    public function testPropertyNotes()
+    {
+    }
+
+    /**
+     * Test attribute "reason"
+     */
+    public function testPropertyReason()
     {
     }
 }

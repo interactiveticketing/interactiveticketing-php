@@ -1,14 +1,73 @@
 # InteractiveTicketing\DefaultApi
 
-All URIs are relative to *https://secure.interactiveticketing.com/developers/api/v2*
+All URIs are relative to *https://secure.interactiveticketing.com/developers/api/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**eventsEventIdAbandonedShoppingCartsGet**](DefaultApi.md#eventseventidabandonedshoppingcartsget) | **GET** /events/{eventId}/abandonedShoppingCarts | Query Abandoned Shopping Cart Data
 [**eventsEventIdGet**](DefaultApi.md#eventseventidget) | **GET** /events/{eventId} | Fetch Event by ID
+[**eventsEventIdOrdersBarcodeBarcodeGet**](DefaultApi.md#eventseventidordersbarcodebarcodeget) | **GET** /events/{eventId}/orders/barcode/{barcode} | Fetch Order by Barcode
 [**eventsEventIdOrdersGet**](DefaultApi.md#eventseventidordersget) | **GET** /events/{eventId}/orders | Query Orders
 [**eventsEventIdOrdersOrderIdGet**](DefaultApi.md#eventseventidordersorderidget) | **GET** /events/{eventId}/orders/{orderId} | Fetch Order by ID
 [**eventsGet**](DefaultApi.md#eventsget) | **GET** /events | List All Events
 [**scanPost**](DefaultApi.md#scanpost) | **POST** /scan | Scan Ticket
+
+# **eventsEventIdAbandonedShoppingCartsGet**
+> \InteractiveTicketing\Models\PaginatedCartEmails eventsEventIdAbandonedShoppingCartsGet($eventId, $fromCartEmailId, $email, $start, $limit)
+
+Query Abandoned Shopping Cart Data
+
+Returns paginated list of cart data from the event. The `cartEmailId` is not unique across all events. Use `fromCartEmailId` parameter to loop through orders if you are pulling down all data.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new InteractiveTicketing\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$eventId = 56; // int | ID of event to return
+$fromCartEmailId = 56; // int | Return entries with `cartEmailId` greater than `fromCartEmailId`.
+$email = 56; // int | Return entries with matching email address.
+$start = 56; // int | For pagination, return orders from `start` row index.
+$limit = 56; // int | For pagination, limit results to `limit` number of rows.
+
+try {
+    $result = $apiInstance->eventsEventIdAbandonedShoppingCartsGet($eventId, $fromCartEmailId, $email, $start, $limit);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->eventsEventIdAbandonedShoppingCartsGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **eventId** | **int**| ID of event to return |
+ **fromCartEmailId** | **int**| Return entries with &#x60;cartEmailId&#x60; greater than &#x60;fromCartEmailId&#x60;. | [optional]
+ **email** | **int**| Return entries with matching email address. | [optional]
+ **start** | **int**| For pagination, return orders from &#x60;start&#x60; row index. | [optional]
+ **limit** | **int**| For pagination, limit results to &#x60;limit&#x60; number of rows. | [optional]
+
+### Return type
+
+[**\InteractiveTicketing\Models\PaginatedCartEmails**](../Model/PaginatedCartEmails.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **eventsEventIdGet**
 > \InteractiveTicketing\Models\Event eventsEventIdGet($eventId)
@@ -47,6 +106,57 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\InteractiveTicketing\Models\Event**](../Model/Event.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **eventsEventIdOrdersBarcodeBarcodeGet**
+> \InteractiveTicketing\Models\Order eventsEventIdOrdersBarcodeBarcodeGet($eventId, $barcode)
+
+Fetch Order by Barcode
+
+Get single order with `eventId` and `barcode`.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new InteractiveTicketing\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$eventId = 789; // int | ID of event to return
+$barcode = "barcode_example"; // string | Barcode from ticket of the order to return
+
+try {
+    $result = $apiInstance->eventsEventIdOrdersBarcodeBarcodeGet($eventId, $barcode);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->eventsEventIdOrdersBarcodeBarcodeGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **eventId** | **int**| ID of event to return |
+ **barcode** | **string**| Barcode from ticket of the order to return |
+
+### Return type
+
+[**\InteractiveTicketing\Models\Order**](../Model/Order.md)
 
 ### Authorization
 

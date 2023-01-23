@@ -1,6 +1,6 @@
 <?php
 /**
- * ScanPointConfigTest
+ * PaginatedCartEmailsTest
  *
  * PHP version 5
  *
@@ -29,15 +29,15 @@
 namespace InteractiveTicketing;
 
 /**
- * ScanPointConfigTest Class Doc Comment
+ * PaginatedCartEmailsTest Class Doc Comment
  *
  * @category    Class
- * @description ScanPointConfig
+ * @description PaginatedCartEmails
  * @package     InteractiveTicketing
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ScanPointConfigTest extends \PHPUnit_Framework_TestCase
+class PaginatedCartEmailsTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -69,30 +69,51 @@ class ScanPointConfigTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "ScanPointConfig"
+     * Test "PaginatedCartEmails"
      */
-    public function testScanPointConfig()
+    public function testPaginatedCartEmails()
     {
     }
 
     /**
-     * Test attribute "scanPointConfigId"
+     * Test attribute "results"
      */
-    public function testPropertyScanPointConfigId()
+    public function testPropertyResults()
     {
     }
 
     /**
-     * Test attribute "name"
+     * Test attribute "start"
      */
-    public function testPropertyName()
+    public function testPropertyStart()
     {
     }
 
     /**
-     * Test attribute "summary"
+     * Test attribute "limit"
      */
-    public function testPropertySummary()
+    public function testPropertyLimit()
+    {
+    }
+
+    /**
+     * Test attribute "limitMax"
+     */
+    public function testPropertyLimitMax()
+    {
+    }
+
+    /**
+     * Test attribute "length"
+     */
+    public function testPropertyLength()
+    {
+    }
+
+    /**
+     * Test attribute "total"
+     */
+    public function testPropertyTotal()
     {
     }
 }

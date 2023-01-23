@@ -1,6 +1,6 @@
 <?php
 /**
- * Scan
+ * SuspectFlag
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \InteractiveTicketing\ObjectSerializer;
 
 /**
- * Scan Class Doc Comment
+ * SuspectFlag Class Doc Comment
  *
  * @category Class
  * @package  InteractiveTicketing
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Scan implements ModelInterface, ArrayAccess
+class SuspectFlag implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class Scan implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Scan';
+    protected static $swaggerModelName = 'SuspectFlag';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,13 +56,12 @@ class Scan implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'scanId' => 'int',
-'time' => 'string',
-'gate' => 'string',
-'uploadTime' => 'string',
-'method' => 'string',
-'scanPoint' => '\InteractiveTicketing\Models\ScanPoint',
-'device' => '\InteractiveTicketing\Models\Device'    ];
+        'suspectFlagId' => 'int',
+'orderId' => 'int',
+'suspectFilterId' => 'int',
+'resolved' => 'bool',
+'notes' => 'string',
+'reason' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -70,13 +69,12 @@ class Scan implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'scanId' => null,
-'time' => null,
-'gate' => null,
-'uploadTime' => null,
-'method' => null,
-'scanPoint' => null,
-'device' => null    ];
+        'suspectFlagId' => null,
+'orderId' => null,
+'suspectFilterId' => null,
+'resolved' => null,
+'notes' => null,
+'reason' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -105,13 +103,12 @@ class Scan implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'scanId' => 'scanId',
-'time' => 'time',
-'gate' => 'gate',
-'uploadTime' => 'uploadTime',
-'method' => 'method',
-'scanPoint' => '_scanPoint',
-'device' => '_device'    ];
+        'suspectFlagId' => 'suspectFlagId',
+'orderId' => 'orderId',
+'suspectFilterId' => 'suspectFilterId',
+'resolved' => 'resolved',
+'notes' => 'notes',
+'reason' => '_reason'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -119,13 +116,12 @@ class Scan implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'scanId' => 'setScanId',
-'time' => 'setTime',
-'gate' => 'setGate',
-'uploadTime' => 'setUploadTime',
-'method' => 'setMethod',
-'scanPoint' => 'setScanPoint',
-'device' => 'setDevice'    ];
+        'suspectFlagId' => 'setSuspectFlagId',
+'orderId' => 'setOrderId',
+'suspectFilterId' => 'setSuspectFilterId',
+'resolved' => 'setResolved',
+'notes' => 'setNotes',
+'reason' => 'setReason'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -133,13 +129,12 @@ class Scan implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'scanId' => 'getScanId',
-'time' => 'getTime',
-'gate' => 'getGate',
-'uploadTime' => 'getUploadTime',
-'method' => 'getMethod',
-'scanPoint' => 'getScanPoint',
-'device' => 'getDevice'    ];
+        'suspectFlagId' => 'getSuspectFlagId',
+'orderId' => 'getOrderId',
+'suspectFilterId' => 'getSuspectFilterId',
+'resolved' => 'getResolved',
+'notes' => 'getNotes',
+'reason' => 'getReason'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -199,13 +194,12 @@ class Scan implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['scanId'] = isset($data['scanId']) ? $data['scanId'] : null;
-        $this->container['time'] = isset($data['time']) ? $data['time'] : null;
-        $this->container['gate'] = isset($data['gate']) ? $data['gate'] : null;
-        $this->container['uploadTime'] = isset($data['uploadTime']) ? $data['uploadTime'] : null;
-        $this->container['method'] = isset($data['method']) ? $data['method'] : null;
-        $this->container['scanPoint'] = isset($data['scanPoint']) ? $data['scanPoint'] : null;
-        $this->container['device'] = isset($data['device']) ? $data['device'] : null;
+        $this->container['suspectFlagId'] = isset($data['suspectFlagId']) ? $data['suspectFlagId'] : null;
+        $this->container['orderId'] = isset($data['orderId']) ? $data['orderId'] : null;
+        $this->container['suspectFilterId'] = isset($data['suspectFilterId']) ? $data['suspectFilterId'] : null;
+        $this->container['resolved'] = isset($data['resolved']) ? $data['resolved'] : null;
+        $this->container['notes'] = isset($data['notes']) ? $data['notes'] : null;
+        $this->container['reason'] = isset($data['reason']) ? $data['reason'] : null;
     }
 
     /**
@@ -233,169 +227,145 @@ class Scan implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets scanId
+     * Gets suspectFlagId
      *
      * @return int
      */
-    public function getScanId()
+    public function getSuspectFlagId()
     {
-        return $this->container['scanId'];
+        return $this->container['suspectFlagId'];
     }
 
     /**
-     * Sets scanId
+     * Sets suspectFlagId
      *
-     * @param int $scanId The scan ID
+     * @param int $suspectFlagId The flag ID
      *
      * @return $this
      */
-    public function setScanId($scanId)
+    public function setSuspectFlagId($suspectFlagId)
     {
-        $this->container['scanId'] = $scanId;
+        $this->container['suspectFlagId'] = $suspectFlagId;
 
         return $this;
     }
 
     /**
-     * Gets time
+     * Gets orderId
+     *
+     * @return int
+     */
+    public function getOrderId()
+    {
+        return $this->container['orderId'];
+    }
+
+    /**
+     * Sets orderId
+     *
+     * @param int $orderId The order ID
+     *
+     * @return $this
+     */
+    public function setOrderId($orderId)
+    {
+        $this->container['orderId'] = $orderId;
+
+        return $this;
+    }
+
+    /**
+     * Gets suspectFilterId
+     *
+     * @return int
+     */
+    public function getSuspectFilterId()
+    {
+        return $this->container['suspectFilterId'];
+    }
+
+    /**
+     * Sets suspectFilterId
+     *
+     * @param int $suspectFilterId The the suspicious filter ID
+     *
+     * @return $this
+     */
+    public function setSuspectFilterId($suspectFilterId)
+    {
+        $this->container['suspectFilterId'] = $suspectFilterId;
+
+        return $this;
+    }
+
+    /**
+     * Gets resolved
+     *
+     * @return bool
+     */
+    public function getResolved()
+    {
+        return $this->container['resolved'];
+    }
+
+    /**
+     * Sets resolved
+     *
+     * @param bool $resolved True indicates if a suspicous order was approved in the dashboard
+     *
+     * @return $this
+     */
+    public function setResolved($resolved)
+    {
+        $this->container['resolved'] = $resolved;
+
+        return $this;
+    }
+
+    /**
+     * Gets notes
      *
      * @return string
      */
-    public function getTime()
+    public function getNotes()
     {
-        return $this->container['time'];
+        return $this->container['notes'];
     }
 
     /**
-     * Sets time
+     * Sets notes
      *
-     * @param string $time The scan time iso-8601
+     * @param string $notes The optional notes
      *
      * @return $this
      */
-    public function setTime($time)
+    public function setNotes($notes)
     {
-        $this->container['time'] = $time;
+        $this->container['notes'] = $notes;
 
         return $this;
     }
 
     /**
-     * Gets gate
+     * Gets reason
      *
      * @return string
      */
-    public function getGate()
+    public function getReason()
     {
-        return $this->container['gate'];
+        return $this->container['reason'];
     }
 
     /**
-     * Sets gate
+     * Sets reason
      *
-     * @param string $gate Gate name identifier string
+     * @param string $reason A message describing the reason order is flagged as suspicious
      *
      * @return $this
      */
-    public function setGate($gate)
+    public function setReason($reason)
     {
-        $this->container['gate'] = $gate;
-
-        return $this;
-    }
-
-    /**
-     * Gets uploadTime
-     *
-     * @return string
-     */
-    public function getUploadTime()
-    {
-        return $this->container['uploadTime'];
-    }
-
-    /**
-     * Sets uploadTime
-     *
-     * @param string $uploadTime The scan device sync time with server iso-8601
-     *
-     * @return $this
-     */
-    public function setUploadTime($uploadTime)
-    {
-        $this->container['uploadTime'] = $uploadTime;
-
-        return $this;
-    }
-
-    /**
-     * Gets method
-     *
-     * @return string
-     */
-    public function getMethod()
-    {
-        return $this->container['method'];
-    }
-
-    /**
-     * Sets method
-     *
-     * @param string $method Ticket format scanned: `single` | `mobile` | `passbook`
-     *
-     * @return $this
-     */
-    public function setMethod($method)
-    {
-        $this->container['method'] = $method;
-
-        return $this;
-    }
-
-    /**
-     * Gets scanPoint
-     *
-     * @return \InteractiveTicketing\Models\ScanPoint
-     */
-    public function getScanPoint()
-    {
-        return $this->container['scanPoint'];
-    }
-
-    /**
-     * Sets scanPoint
-     *
-     * @param \InteractiveTicketing\Models\ScanPoint $scanPoint scanPoint
-     *
-     * @return $this
-     */
-    public function setScanPoint($scanPoint)
-    {
-        $this->container['scanPoint'] = $scanPoint;
-
-        return $this;
-    }
-
-    /**
-     * Gets device
-     *
-     * @return \InteractiveTicketing\Models\Device
-     */
-    public function getDevice()
-    {
-        return $this->container['device'];
-    }
-
-    /**
-     * Sets device
-     *
-     * @param \InteractiveTicketing\Models\Device $device device
-     *
-     * @return $this
-     */
-    public function setDevice($device)
-    {
-        $this->container['device'] = $device;
+        $this->container['reason'] = $reason;
 
         return $this;
     }

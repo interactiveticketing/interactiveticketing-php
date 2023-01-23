@@ -1,6 +1,6 @@
 <?php
 /**
- * ScanPointConfigTest
+ * CartEmailTest
  *
  * PHP version 5
  *
@@ -29,15 +29,15 @@
 namespace InteractiveTicketing;
 
 /**
- * ScanPointConfigTest Class Doc Comment
+ * CartEmailTest Class Doc Comment
  *
  * @category    Class
- * @description ScanPointConfig
+ * @description CartEmail
  * @package     InteractiveTicketing
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ScanPointConfigTest extends \PHPUnit_Framework_TestCase
+class CartEmailTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -69,30 +69,37 @@ class ScanPointConfigTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "ScanPointConfig"
+     * Test "CartEmail"
      */
-    public function testScanPointConfig()
+    public function testCartEmail()
     {
     }
 
     /**
-     * Test attribute "scanPointConfigId"
+     * Test attribute "cartEmailId"
      */
-    public function testPropertyScanPointConfigId()
+    public function testPropertyCartEmailId()
     {
     }
 
     /**
-     * Test attribute "name"
+     * Test attribute "createdAt"
      */
-    public function testPropertyName()
+    public function testPropertyCreatedAt()
     {
     }
 
     /**
-     * Test attribute "summary"
+     * Test attribute "email"
      */
-    public function testPropertySummary()
+    public function testPropertyEmail()
+    {
+    }
+
+    /**
+     * Test attribute "cartData"
+     */
+    public function testPropertyCartData()
     {
     }
 }

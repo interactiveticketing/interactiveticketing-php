@@ -1,6 +1,6 @@
 <?php
 /**
- * Scan
+ * CartEmail
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \InteractiveTicketing\ObjectSerializer;
 
 /**
- * Scan Class Doc Comment
+ * CartEmail Class Doc Comment
  *
  * @category Class
  * @package  InteractiveTicketing
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Scan implements ModelInterface, ArrayAccess
+class CartEmail implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class Scan implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Scan';
+    protected static $swaggerModelName = 'CartEmail';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,13 +56,10 @@ class Scan implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'scanId' => 'int',
-'time' => 'string',
-'gate' => 'string',
-'uploadTime' => 'string',
-'method' => 'string',
-'scanPoint' => '\InteractiveTicketing\Models\ScanPoint',
-'device' => '\InteractiveTicketing\Models\Device'    ];
+        'cartEmailId' => 'int',
+'createdAt' => 'string',
+'email' => 'string',
+'cartData' => 'object'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -70,13 +67,10 @@ class Scan implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'scanId' => null,
-'time' => null,
-'gate' => null,
-'uploadTime' => null,
-'method' => null,
-'scanPoint' => null,
-'device' => null    ];
+        'cartEmailId' => null,
+'createdAt' => null,
+'email' => null,
+'cartData' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -105,13 +99,10 @@ class Scan implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'scanId' => 'scanId',
-'time' => 'time',
-'gate' => 'gate',
-'uploadTime' => 'uploadTime',
-'method' => 'method',
-'scanPoint' => '_scanPoint',
-'device' => '_device'    ];
+        'cartEmailId' => 'cartEmailId',
+'createdAt' => 'createdAt',
+'email' => 'email',
+'cartData' => 'cartData'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -119,13 +110,10 @@ class Scan implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'scanId' => 'setScanId',
-'time' => 'setTime',
-'gate' => 'setGate',
-'uploadTime' => 'setUploadTime',
-'method' => 'setMethod',
-'scanPoint' => 'setScanPoint',
-'device' => 'setDevice'    ];
+        'cartEmailId' => 'setCartEmailId',
+'createdAt' => 'setCreatedAt',
+'email' => 'setEmail',
+'cartData' => 'setCartData'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -133,13 +121,10 @@ class Scan implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'scanId' => 'getScanId',
-'time' => 'getTime',
-'gate' => 'getGate',
-'uploadTime' => 'getUploadTime',
-'method' => 'getMethod',
-'scanPoint' => 'getScanPoint',
-'device' => 'getDevice'    ];
+        'cartEmailId' => 'getCartEmailId',
+'createdAt' => 'getCreatedAt',
+'email' => 'getEmail',
+'cartData' => 'getCartData'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -199,13 +184,10 @@ class Scan implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['scanId'] = isset($data['scanId']) ? $data['scanId'] : null;
-        $this->container['time'] = isset($data['time']) ? $data['time'] : null;
-        $this->container['gate'] = isset($data['gate']) ? $data['gate'] : null;
-        $this->container['uploadTime'] = isset($data['uploadTime']) ? $data['uploadTime'] : null;
-        $this->container['method'] = isset($data['method']) ? $data['method'] : null;
-        $this->container['scanPoint'] = isset($data['scanPoint']) ? $data['scanPoint'] : null;
-        $this->container['device'] = isset($data['device']) ? $data['device'] : null;
+        $this->container['cartEmailId'] = isset($data['cartEmailId']) ? $data['cartEmailId'] : null;
+        $this->container['createdAt'] = isset($data['createdAt']) ? $data['createdAt'] : null;
+        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
+        $this->container['cartData'] = isset($data['cartData']) ? $data['cartData'] : null;
     }
 
     /**
@@ -233,169 +215,97 @@ class Scan implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets scanId
+     * Gets cartEmailId
      *
      * @return int
      */
-    public function getScanId()
+    public function getCartEmailId()
     {
-        return $this->container['scanId'];
+        return $this->container['cartEmailId'];
     }
 
     /**
-     * Sets scanId
+     * Sets cartEmailId
      *
-     * @param int $scanId The scan ID
+     * @param int $cartEmailId The ID
      *
      * @return $this
      */
-    public function setScanId($scanId)
+    public function setCartEmailId($cartEmailId)
     {
-        $this->container['scanId'] = $scanId;
+        $this->container['cartEmailId'] = $cartEmailId;
 
         return $this;
     }
 
     /**
-     * Gets time
+     * Gets createdAt
      *
      * @return string
      */
-    public function getTime()
+    public function getCreatedAt()
     {
-        return $this->container['time'];
+        return $this->container['createdAt'];
     }
 
     /**
-     * Sets time
+     * Sets createdAt
      *
-     * @param string $time The scan time iso-8601
+     * @param string $createdAt The time user submitted their email address
      *
      * @return $this
      */
-    public function setTime($time)
+    public function setCreatedAt($createdAt)
     {
-        $this->container['time'] = $time;
+        $this->container['createdAt'] = $createdAt;
 
         return $this;
     }
 
     /**
-     * Gets gate
+     * Gets email
      *
      * @return string
      */
-    public function getGate()
+    public function getEmail()
     {
-        return $this->container['gate'];
+        return $this->container['email'];
     }
 
     /**
-     * Sets gate
+     * Sets email
      *
-     * @param string $gate Gate name identifier string
+     * @param string $email Customer email address
      *
      * @return $this
      */
-    public function setGate($gate)
+    public function setEmail($email)
     {
-        $this->container['gate'] = $gate;
+        $this->container['email'] = $email;
 
         return $this;
     }
 
     /**
-     * Gets uploadTime
+     * Gets cartData
      *
-     * @return string
+     * @return object
      */
-    public function getUploadTime()
+    public function getCartData()
     {
-        return $this->container['uploadTime'];
+        return $this->container['cartData'];
     }
 
     /**
-     * Sets uploadTime
+     * Sets cartData
      *
-     * @param string $uploadTime The scan device sync time with server iso-8601
+     * @param object $cartData Raw Cart Data collected
      *
      * @return $this
      */
-    public function setUploadTime($uploadTime)
+    public function setCartData($cartData)
     {
-        $this->container['uploadTime'] = $uploadTime;
-
-        return $this;
-    }
-
-    /**
-     * Gets method
-     *
-     * @return string
-     */
-    public function getMethod()
-    {
-        return $this->container['method'];
-    }
-
-    /**
-     * Sets method
-     *
-     * @param string $method Ticket format scanned: `single` | `mobile` | `passbook`
-     *
-     * @return $this
-     */
-    public function setMethod($method)
-    {
-        $this->container['method'] = $method;
-
-        return $this;
-    }
-
-    /**
-     * Gets scanPoint
-     *
-     * @return \InteractiveTicketing\Models\ScanPoint
-     */
-    public function getScanPoint()
-    {
-        return $this->container['scanPoint'];
-    }
-
-    /**
-     * Sets scanPoint
-     *
-     * @param \InteractiveTicketing\Models\ScanPoint $scanPoint scanPoint
-     *
-     * @return $this
-     */
-    public function setScanPoint($scanPoint)
-    {
-        $this->container['scanPoint'] = $scanPoint;
-
-        return $this;
-    }
-
-    /**
-     * Gets device
-     *
-     * @return \InteractiveTicketing\Models\Device
-     */
-    public function getDevice()
-    {
-        return $this->container['device'];
-    }
-
-    /**
-     * Sets device
-     *
-     * @param \InteractiveTicketing\Models\Device $device device
-     *
-     * @return $this
-     */
-    public function setDevice($device)
-    {
-        $this->container['device'] = $device;
+        $this->container['cartData'] = $cartData;
 
         return $this;
     }

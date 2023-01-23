@@ -1,6 +1,6 @@
 <?php
 /**
- * Scan
+ * PaginatedCartEmails
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \InteractiveTicketing\ObjectSerializer;
 
 /**
- * Scan Class Doc Comment
+ * PaginatedCartEmails Class Doc Comment
  *
  * @category Class
  * @package  InteractiveTicketing
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Scan implements ModelInterface, ArrayAccess
+class PaginatedCartEmails implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class Scan implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Scan';
+    protected static $swaggerModelName = 'PaginatedCartEmails';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,13 +56,12 @@ class Scan implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'scanId' => 'int',
-'time' => 'string',
-'gate' => 'string',
-'uploadTime' => 'string',
-'method' => 'string',
-'scanPoint' => '\InteractiveTicketing\Models\ScanPoint',
-'device' => '\InteractiveTicketing\Models\Device'    ];
+        'results' => '\InteractiveTicketing\Models\CartEmail[]',
+'start' => 'int',
+'limit' => 'int',
+'limitMax' => 'int',
+'length' => 'int',
+'total' => 'int'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -70,13 +69,12 @@ class Scan implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'scanId' => null,
-'time' => null,
-'gate' => null,
-'uploadTime' => null,
-'method' => null,
-'scanPoint' => null,
-'device' => null    ];
+        'results' => null,
+'start' => null,
+'limit' => null,
+'limitMax' => null,
+'length' => null,
+'total' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -105,13 +103,12 @@ class Scan implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'scanId' => 'scanId',
-'time' => 'time',
-'gate' => 'gate',
-'uploadTime' => 'uploadTime',
-'method' => 'method',
-'scanPoint' => '_scanPoint',
-'device' => '_device'    ];
+        'results' => 'results',
+'start' => 'start',
+'limit' => 'limit',
+'limitMax' => 'limitMax',
+'length' => 'length',
+'total' => 'total'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -119,13 +116,12 @@ class Scan implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'scanId' => 'setScanId',
-'time' => 'setTime',
-'gate' => 'setGate',
-'uploadTime' => 'setUploadTime',
-'method' => 'setMethod',
-'scanPoint' => 'setScanPoint',
-'device' => 'setDevice'    ];
+        'results' => 'setResults',
+'start' => 'setStart',
+'limit' => 'setLimit',
+'limitMax' => 'setLimitMax',
+'length' => 'setLength',
+'total' => 'setTotal'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -133,13 +129,12 @@ class Scan implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'scanId' => 'getScanId',
-'time' => 'getTime',
-'gate' => 'getGate',
-'uploadTime' => 'getUploadTime',
-'method' => 'getMethod',
-'scanPoint' => 'getScanPoint',
-'device' => 'getDevice'    ];
+        'results' => 'getResults',
+'start' => 'getStart',
+'limit' => 'getLimit',
+'limitMax' => 'getLimitMax',
+'length' => 'getLength',
+'total' => 'getTotal'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -199,13 +194,12 @@ class Scan implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['scanId'] = isset($data['scanId']) ? $data['scanId'] : null;
-        $this->container['time'] = isset($data['time']) ? $data['time'] : null;
-        $this->container['gate'] = isset($data['gate']) ? $data['gate'] : null;
-        $this->container['uploadTime'] = isset($data['uploadTime']) ? $data['uploadTime'] : null;
-        $this->container['method'] = isset($data['method']) ? $data['method'] : null;
-        $this->container['scanPoint'] = isset($data['scanPoint']) ? $data['scanPoint'] : null;
-        $this->container['device'] = isset($data['device']) ? $data['device'] : null;
+        $this->container['results'] = isset($data['results']) ? $data['results'] : null;
+        $this->container['start'] = isset($data['start']) ? $data['start'] : null;
+        $this->container['limit'] = isset($data['limit']) ? $data['limit'] : null;
+        $this->container['limitMax'] = isset($data['limitMax']) ? $data['limitMax'] : null;
+        $this->container['length'] = isset($data['length']) ? $data['length'] : null;
+        $this->container['total'] = isset($data['total']) ? $data['total'] : null;
     }
 
     /**
@@ -233,169 +227,145 @@ class Scan implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets scanId
+     * Gets results
+     *
+     * @return \InteractiveTicketing\Models\CartEmail[]
+     */
+    public function getResults()
+    {
+        return $this->container['results'];
+    }
+
+    /**
+     * Sets results
+     *
+     * @param \InteractiveTicketing\Models\CartEmail[] $results Page of cartEmails
+     *
+     * @return $this
+     */
+    public function setResults($results)
+    {
+        $this->container['results'] = $results;
+
+        return $this;
+    }
+
+    /**
+     * Gets start
      *
      * @return int
      */
-    public function getScanId()
+    public function getStart()
     {
-        return $this->container['scanId'];
+        return $this->container['start'];
     }
 
     /**
-     * Sets scanId
+     * Sets start
      *
-     * @param int $scanId The scan ID
+     * @param int $start The start index position in query results page
      *
      * @return $this
      */
-    public function setScanId($scanId)
+    public function setStart($start)
     {
-        $this->container['scanId'] = $scanId;
+        $this->container['start'] = $start;
 
         return $this;
     }
 
     /**
-     * Gets time
+     * Gets limit
      *
-     * @return string
+     * @return int
      */
-    public function getTime()
+    public function getLimit()
     {
-        return $this->container['time'];
+        return $this->container['limit'];
     }
 
     /**
-     * Sets time
+     * Sets limit
      *
-     * @param string $time The scan time iso-8601
+     * @param int $limit The number of items per page
      *
      * @return $this
      */
-    public function setTime($time)
+    public function setLimit($limit)
     {
-        $this->container['time'] = $time;
+        $this->container['limit'] = $limit;
 
         return $this;
     }
 
     /**
-     * Gets gate
+     * Gets limitMax
      *
-     * @return string
+     * @return int
      */
-    public function getGate()
+    public function getLimitMax()
     {
-        return $this->container['gate'];
+        return $this->container['limitMax'];
     }
 
     /**
-     * Sets gate
+     * Sets limitMax
      *
-     * @param string $gate Gate name identifier string
+     * @param int $limitMax The maximum number of items per page supported by the endpoint
      *
      * @return $this
      */
-    public function setGate($gate)
+    public function setLimitMax($limitMax)
     {
-        $this->container['gate'] = $gate;
+        $this->container['limitMax'] = $limitMax;
 
         return $this;
     }
 
     /**
-     * Gets uploadTime
+     * Gets length
      *
-     * @return string
+     * @return int
      */
-    public function getUploadTime()
+    public function getLength()
     {
-        return $this->container['uploadTime'];
+        return $this->container['length'];
     }
 
     /**
-     * Sets uploadTime
+     * Sets length
      *
-     * @param string $uploadTime The scan device sync time with server iso-8601
+     * @param int $length The number of items on current page
      *
      * @return $this
      */
-    public function setUploadTime($uploadTime)
+    public function setLength($length)
     {
-        $this->container['uploadTime'] = $uploadTime;
+        $this->container['length'] = $length;
 
         return $this;
     }
 
     /**
-     * Gets method
+     * Gets total
      *
-     * @return string
+     * @return int
      */
-    public function getMethod()
+    public function getTotal()
     {
-        return $this->container['method'];
+        return $this->container['total'];
     }
 
     /**
-     * Sets method
+     * Sets total
      *
-     * @param string $method Ticket format scanned: `single` | `mobile` | `passbook`
+     * @param int $total The total number of items on all pages
      *
      * @return $this
      */
-    public function setMethod($method)
+    public function setTotal($total)
     {
-        $this->container['method'] = $method;
-
-        return $this;
-    }
-
-    /**
-     * Gets scanPoint
-     *
-     * @return \InteractiveTicketing\Models\ScanPoint
-     */
-    public function getScanPoint()
-    {
-        return $this->container['scanPoint'];
-    }
-
-    /**
-     * Sets scanPoint
-     *
-     * @param \InteractiveTicketing\Models\ScanPoint $scanPoint scanPoint
-     *
-     * @return $this
-     */
-    public function setScanPoint($scanPoint)
-    {
-        $this->container['scanPoint'] = $scanPoint;
-
-        return $this;
-    }
-
-    /**
-     * Gets device
-     *
-     * @return \InteractiveTicketing\Models\Device
-     */
-    public function getDevice()
-    {
-        return $this->container['device'];
-    }
-
-    /**
-     * Sets device
-     *
-     * @param \InteractiveTicketing\Models\Device $device device
-     *
-     * @return $this
-     */
-    public function setDevice($device)
-    {
-        $this->container['device'] = $device;
+        $this->container['total'] = $total;
 
         return $this;
     }

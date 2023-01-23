@@ -32,6 +32,9 @@ Name | Type | Description | Notes
 **transactions** | [**\InteractiveTicketing\Models\Transaction[]**](Transaction.md) | Array of payment/refund transactions | [optional] 
 **tickets** | [**\InteractiveTicketing\Models\Ticket[]**](Ticket.md) | Array of tickets ordered | [optional] 
 **posCashierName** | **string** | Applicable to pos orders | [optional] 
+**suspectFlags** | [**\InteractiveTicketing\Models\SuspectFlag[]**](SuspectFlag.md) | Array of reasons the order is flagged as suspicious | [optional] 
+**isSuspicious** | **bool** | True indicates if order is flagged as suspicious | [optional] 
+**suspiciousResolved** | **bool** | True indicates if a suspicous order was approved in the dashboard | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
